@@ -88,19 +88,4 @@ export USE_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 export GOPATH=$HOME/workspace/go-projects
 export RUST_SRC_PATH=$HOME/workspace/rust-source/src
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$HOME/.cargo/bin
-
-source ~/.oh-my-zsh/lib/alias.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# xcape configuration, make Return key as control modifier if kept pressed
-if ! pgrep "xcape" > /dev/null;
-then
-xmodmap -e "remove Control = Control_R"
-xmodmap -e "keycode 0x69 = Return"
-xmodmap -e "keycode 0x24 = Control_R"
-xmodmap -e "add Control = Control_R"
-xcape -t 10000 -e "Control_R=Return"
-fi
+export PATH=$PATH:/usr/local/go/bin:$HOME/.cargo/bin
